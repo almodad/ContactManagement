@@ -24,9 +24,11 @@ namespace ContactManagement
     {
         public MainPage()
         {
-            this.InitializeComponent();
-
+            this.InitializeComponent();        
             this.NavigationCacheMode = NavigationCacheMode.Required;
+
+            lvContacts.ReorderMode = ListViewReorderMode.Enabled;
+            lvContacts.SelectionMode = ListViewSelectionMode.Multiple;
         }
 
         /// <summary>
@@ -46,10 +48,11 @@ namespace ContactManagement
             App app = Application.Current as App;
             if(app != null)
             {
-                //lvContacts.ItemsSource = app.contacts;
+                lvContacts.ItemsSource = app.contacts;                               
+
             }
 
-            List<Contact> contacts = new List<Contact>()
+            /*List<Contact> contacts = new List<Contact>()
             {
                 new Contact()
                 {
@@ -92,8 +95,10 @@ namespace ContactManagement
                     PhoneNumber = "0727162205"
                 }
             };
-
             lvContacts.ItemsSource = contacts;
+             */
+
+            
 
         }
 

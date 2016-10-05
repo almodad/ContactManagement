@@ -1,6 +1,7 @@
 ﻿using ContactManagement.Common;
 using System;
 using System.Collections.Generic;
+using System.Collections.ObjectModel;
 using System.IO;
 using System.Linq;
 using System.Runtime.InteropServices.WindowsRuntime;
@@ -122,7 +123,15 @@ namespace ContactManagement
             App app = Application.Current as App;
             if (app != null)
             {
-                app.contacts.Add(contact);
+                if(app.contacts == null)
+                {
+                    app.contacts = new ObservableCollection<Contact>();
+                    app.contacts.Add(contact);
+                }else
+                {
+                    app.contacts.Add(contact);
+                }
+                
             }
             Frame.GoBack();
         }
