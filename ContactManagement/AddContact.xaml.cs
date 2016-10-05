@@ -118,7 +118,13 @@ namespace ContactManagement
                 Email = txtEmail.Text,
                 PhoneNumber = txtPhone.Text
             };*/
-            Frame.Navigate(typeof(ViewContact), contact); 
+            //Frame.Navigate(typeof(ViewContact), contact); 
+            App app = Application.Current as App;
+            if (app != null)
+            {
+                app.contacts.Add(contact);
+            }
+            Frame.GoBack();
         }
     }
 }

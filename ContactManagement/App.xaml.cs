@@ -26,7 +26,7 @@ namespace ContactManagement
     public sealed partial class App : Application
     {
         private TransitionCollection transitions;
-
+        public List<Contact> contacts { get; set; }
         /// <summary>
         /// Initializes the singleton application object.  This is the first line of authored code
         /// executed, and as such is the logical equivalent of main() or WinMain().
@@ -35,6 +35,8 @@ namespace ContactManagement
         {
             this.InitializeComponent();
             this.Suspending += this.OnSuspending;
+            //In memory storage for list of contacts
+            contacts = new List<Contact>();
         }
 
         /// <summary>

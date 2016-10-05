@@ -35,13 +35,7 @@
             <TextBox x:Name="txtName" Margin="0,10,-0.333,10" TextWrapping="Wrap" Text="{Binding Name, Mode=TwoWay}" VerticalAlignment="Stretch" AcceptsReturn="True" PlaceholderText="Name"/>
             <TextBox x:Name="txtEmail" Margin="0,10,-0.333,10" TextWrapping="Wrap" Text="{Binding Email, Mode=TwoWay}" VerticalAlignment="Stretch" PlaceholderText="Email" InputScope="EmailSmtpAddress"/>
             <TextBox x:Name="txtPhone" Margin="0,10,-0.333,10" TextWrapping="Wrap" Text="{Binding PhoneNumber, Mode=TwoWay}" VerticalAlignment="Stretch" PlaceholderText="Phone number" InputScope="TelephoneNumber" FontFamily="Global User Interface"/>
-           
-            <StackPanel>
-                <TextBlock x:Name="tbName" TextWrapping="Wrap" Text="{Binding Name}" Height="40" Margin="0,10" FontSize="36"/>
-                <TextBlock x:Name="tbEmail" TextWrapping="Wrap" Text="{Binding Email}" Height="40" Margin="0,10" FontSize="36"/>
-                <TextBlock x:Name="tbPhone" TextWrapping="Wrap" Text="{Binding PhoneNumber}" Height="40" Margin="0,10,-0.333,10" FontSize="36"/>
-            </StackPanel>
-        
+
         </StackPanel>
 
         <!--TODO: Content should be placed within the following grid-->
