@@ -44,5 +44,10 @@ namespace ContactManagement
             // If you are using the NavigationHelper provided by some templates,
             // this event is handled for you.
         }
+
+        private void btnAdd_Click(object sender, RoutedEventArgs e)
+        {
+            Frame.Navigate(typeof(AddContact));
+        }
     }
 }
