@@ -43,6 +43,58 @@ namespace ContactManagement
             // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
             // If you are using the NavigationHelper provided by some templates,
             // this event is handled for you.
+            App app = Application.Current as App;
+            if(app != null)
+            {
+                //lvContacts.ItemsSource = app.contacts;
+            }
+
+            List<Contact> contacts = new List<Contact>()
+            {
+                new Contact()
+                {
+                    Name = "Rodgers",
+                    PhoneNumber = "0727162205"
+                },
+                new Contact()
+                {
+                    Name = "Almodad",
+                    PhoneNumber = "0718000659"
+                },
+                new Contact()
+                {
+                    Name = "Mike",
+                    PhoneNumber = "0727162205"
+                },
+                new Contact()
+                {
+                    Name = "Mercy",
+                    PhoneNumber = "0727162205"
+                },
+                new Contact()
+                {
+                    Name = "Kizzy",
+                    PhoneNumber = "0727162205"
+                },
+                new Contact()
+                {
+                    Name = "Peter",
+                    PhoneNumber = "0727162205"
+                },
+                new Contact()
+                {
+                    Name = "Antony",
+                    PhoneNumber = "0727162205"
+                },
+                new Contact()
+                {
+                    Name = "Chebet",
+                    PhoneNumber = "0727162205"
+                }
+            };
+
+            lvContacts.ItemsSource = contacts;
+
         }
 
         private void btnAdd_Click(object sender, RoutedEventArgs e)

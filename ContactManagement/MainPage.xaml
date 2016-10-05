@@ -29,7 +29,25 @@
             <TextBlock Text="CONTACTS MANAGER" Style="{ThemeResource TitleTextBlockStyle}" Margin="0,12,0,0"/>
             <TextBlock Text="contacts" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
         </StackPanel>
-        <Grid x:Name="ContentRoot" Margin="19,9.5,19,0" Grid.Row="1" />
+        <Grid x:Name="ContentRoot" Margin="19,9.5,19,0" Grid.Row="1" >
+            <ListView x:Name="lvContacts" HorizontalAlignment="Left" Height="491" VerticalAlignment="Top" Width="352">
+                <ListView.Resources>
+                    <DataTemplate x:Key="DataTemplate">
+                        <Grid Height="92" Width="423">
+                            <Image x:Name="image" HorizontalAlignment="Left" Height="92" Margin="10,0,0,0" VerticalAlignment="Top" Width="107" Source="Assets/avatar-login-round-profile-512.png"/>
+                            <StackPanel HorizontalAlignment="Left" Height="92" Margin="122,0,0,0" VerticalAlignment="Top" Width="291">
+                                <TextBlock x:Name="tbName" TextWrapping="Wrap" Text="{Binding Name}" Height="33" Margin="0,0,-0.167,0" Padding="0,5" Foreground="#FF0DFFF4" FontSize="20"/>
+                                <TextBlock x:Name="tbPhone" TextWrapping="Wrap" Text="{Binding PhoneNumber}" Height="37" Margin="0,0,-0.167,0" Padding="0,5" Foreground="#FF0DFFF4" FontSize="20"/>
+                            </StackPanel>
+                        </Grid>
+                    </DataTemplate>
+                </ListView.Resources>
+                <ListView.ItemTemplate>
+                    <StaticResource ResourceKey="DataTemplate"/>
+                </ListView.ItemTemplate>
+            </ListView>
+
+        </Grid>
 
         <!--TODO: Content should be placed within the following grid-->
     </Grid>
