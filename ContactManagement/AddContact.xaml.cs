@@ -118,7 +118,7 @@ namespace ContactManagement
                 Name = txtName.Text,
                 Email = txtEmail.Text,
                 PhoneNumber = txtPhone.Text
-            };*/
+            };
             //Frame.Navigate(typeof(ViewContact), contact); 
             App app = Application.Current as App;
             if (app != null)
@@ -132,7 +132,11 @@ namespace ContactManagement
                     app.contacts.Add(contact);
                 }
                 
-            }
+            }*/
+            Settings settings = new Settings();
+            List<Contact> contacts = settings.contacts;
+            contacts.Add(contact);
+            settings.contacts = contacts;
             Frame.GoBack();
         }
     }

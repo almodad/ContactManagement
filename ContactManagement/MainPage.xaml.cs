@@ -27,8 +27,8 @@ namespace ContactManagement
             this.InitializeComponent();        
             this.NavigationCacheMode = NavigationCacheMode.Required;
 
-            lvContacts.ReorderMode = ListViewReorderMode.Enabled;
-            lvContacts.SelectionMode = ListViewSelectionMode.Multiple;
+            /*lvContacts.ReorderMode = ListViewReorderMode.Enabled;
+            lvContacts.SelectionMode = ListViewSelectionMode.Multiple;*/
         }
 
         /// <summary>
@@ -45,12 +45,13 @@ namespace ContactManagement
             // Windows.Phone.UI.Input.HardwareButtons.BackPressed event.
             // If you are using the NavigationHelper provided by some templates,
             // this event is handled for you.
-            App app = Application.Current as App;
+            /*App app = Application.Current as App;
             if(app != null)
             {
                 lvContacts.ItemsSource = app.contacts;                               
 
-            }
+            }*/
+            lvContacts.ItemsSource = new Settings().contacts;
 
             /*List<Contact> contacts = new List<Contact>()
             {
@@ -106,5 +107,12 @@ namespace ContactManagement
         {
             Frame.Navigate(typeof(AddContact));
         }
+
+        private void OnListItemClick(object sender, ItemClickEventArgs e)
+        {
+            // Navigate to ViewContact page
+            Frame.Navigate(typeof(ViewContact), e.ClickedItem);
+        }
+        
     }
 }

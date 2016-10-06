@@ -30,7 +30,7 @@
             <TextBlock Text="contacts" Margin="0,-6.5,0,26.5" Style="{ThemeResource HeaderTextBlockStyle}" CharacterSpacing="{ThemeResource PivotHeaderItemCharacterSpacing}"/>
         </StackPanel>
         <Grid x:Name="ContentRoot" Margin="19,9.5,19,0" Grid.Row="1" >
-            <ListView x:Name="lvContacts" HorizontalAlignment="Left" Height="491" VerticalAlignment="Top" Width="352">
+            <ListView x:Name="lvContacts" HorizontalAlignment="Left" Height="491" VerticalAlignment="Top" Width="352" ItemClick="OnListItemClick" IsItemClickEnabled="True">
                 <ListView.Resources>
                     <DataTemplate x:Key="DataTemplate">
                         <Grid Height="92" Width="423">
