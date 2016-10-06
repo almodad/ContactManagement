@@ -8,6 +8,7 @@ using System.Runtime.InteropServices.WindowsRuntime;
 using Windows.Foundation;
 using Windows.Foundation.Collections;
 using Windows.Graphics.Display;
+using Windows.UI.Popups;
 using Windows.UI.ViewManagement;
 using Windows.UI.Xaml;
 using Windows.UI.Xaml.Controls;
@@ -133,11 +134,20 @@ namespace ContactManagement
                 }
                 
             }*/
-            Settings settings = new Settings();
+            /*Settings settings = new Settings();
             List<Contact> contacts = settings.contacts;
             contacts.Add(contact);
-            settings.contacts = contacts;
-            Frame.GoBack();
+            settings.contacts = contacts;*/
+
+            Contact contactRes = Proxy.postContact(contact).Result;
+            if (contactRes != null)
+            {
+                Frame.GoBack();
+            }
+            else
+            {
+                new MessageDialog("Failed to add contact").ShowAsync();
+            }
         }
     }
 }

@@ -51,7 +51,9 @@ namespace ContactManagement
                 lvContacts.ItemsSource = app.contacts;                               
 
             }*/
-            lvContacts.ItemsSource = new Settings().contacts;
+            List<Contact> contacts = Proxy.getContacts();
+            lvContacts.ItemsSource = contacts;
+            //lvContacts.ItemsSource = new Settings().contacts;
 
             /*List<Contact> contacts = new List<Contact>()
             {
@@ -99,7 +101,7 @@ namespace ContactManagement
             lvContacts.ItemsSource = contacts;
              */
 
-            
+
 
         }
 

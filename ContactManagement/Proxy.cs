@@ -11,21 +11,22 @@ namespace ContactManagement
     public class Proxy
     {
         private const string URL = "http://apicontacts.azurewebsites.net/";
-        public static Contact postContact(Contact contact)
+        public static async Task<Contact> postContact(Contact contact)
         {
             var client = new RestClient { BaseUrl = URL };
 
-            RestRequest request = new RestRequest("contact/", HttpMethod.Post);
-            request.AddParameter(contact);
-            var response = client.ExecuteAsync<Contact>(request);
+            RestRequest request = new RestRequest("contacts/", HttpMethod.Post);
+            request.ContentType = ContentTypes.Json;
+            request.AddParameter(contact);            
+            var response = await client.ExecuteAsync<Contact>(request);
             
-            return response.Result;          
+            return response;          
         }
 
-        public static List<Contact> getContact()
+        public static List<Contact> getContacts()
         {
             var client = new RestClient { BaseUrl = URL };
-            RestRequest request = new RestRequest("contact/", HttpMethod.Get);
+            RestRequest request = new RestRequest("contacts/", HttpMethod.Get);
             var response = client.ExecuteAsync<List<Contact>>(request);
             return response.Result;
         }
